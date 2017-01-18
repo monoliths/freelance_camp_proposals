@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+    # public id?: number,
+    # public customer?: string,
+    # public portfolio_url: string = 'http://',
+    # public tools?: string,
+    # public estimated_hours?: number,
+    # public hourly_rate?: number,
+    # public weeks_to_complete?: number,
+    # public client_email?: string,
+10.times do |proposal|
+  Proposal.create!(
+    customer: "Customer #{proposal}",
+    portfolio_url: 'http://github.com/monoliths',
+    tools: 'Pheonix, Erlang, Postgresql, NGinX, Linux, Ember',
+    estimated_hours: (80 + proposal),
+    hourly_rate: 45,
+    weeks_to_complete: 10,
+    client_email: 'bob@idgaf.com'
+  )
+end
